@@ -41,7 +41,7 @@ body {
   cursor: pointer;
   padding: 8px 12px;
   position: absolute;
-  top: 100%;
+  top: 100px
 }
 
 .toggle:focus {
@@ -68,6 +68,7 @@ body {
   position: absolute;
   top: 50%;
   transform-origin: bottom center;
+  transition: all 0.5s ease-in;
   width: 3px;
 }
 
@@ -124,6 +125,7 @@ body {
   background-color: var(--primary-color);
   border-radius: 50%;
   color: var(--secondary-color);
+  font-size: 0.75rem;
   align-items: center;
   display: inline-flex;
   justify-content: center;
