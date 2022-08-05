@@ -4,13 +4,131 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   font-family: 'Heebo', sans-serif;
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  border: 0;
+  border-radius: 4px;
+  color: var(--secondary-color);
+  cursor: pointer;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100%;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clock {
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  height: 65px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: bottom center;
+  width: 3px;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  height: 100px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.second {
+  background-color: #e74c3c;
+  height: 100px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.center-point {
+  background-color: #e74c3c;
+  border-radius: 50%;
+  height: 10px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+}
+
+.center-point::after {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  content: "";
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+}
+
+.time {
+  font-size: 3.75rem;
+}
+
+.date {
+  color: #aaa;
+  font-size: 0.875rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: var(--secondary-color);
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  height: 18px;
+  line-height: 18px;
+  width: 18px;
+  transition: all 0.5s ease-in;
 }
